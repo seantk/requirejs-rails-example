@@ -3,7 +3,8 @@
 <head>
   <title>RequirejsRailsExample</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= requirejs_include_tag  "main" %>
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.19/themes/base/jquery-ui.css">
+  <%= requirejs_include_tag 'app' %>
   <%= csrf_meta_tags %>
 </head>
 <body>

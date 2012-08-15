@@ -1,2 +1,48 @@
 modules:
-  - name: "main"
+    - name: 'app'
+    - name: 'widgets/calendar/main'
+      exclude: ['app']
+    - name: 'widgets/controls/main'
+      exclude: ['app']
+    - name: 'widgets/todos/main'
+      exclude: ['app']
+
+enforceDefine: true
+shim:
+    dom:
+        exports: '$'
+        deps: ['jquery']
+    underscore:
+        exports: '_'
+    backbone:
+        deps: ['underscore', 'dom']
+        exports: 'Backbone'
+    deferred:
+        exports: 'Deferred'
+        deps: ['dom']
+    fullcalendar:
+        deps: ['jquery']
+        exports: '$.fullCalendar'
+    jquery_ui:
+        deps: ['jquery']
+        exports: '$.ui'
+
+paths:
+    jquery: 'aura/lib/jquery/jquery'
+    zepto: 'aura/lib/zepto/zepto'
+    deferred: 'aura/lib/zepto/deferred'
+    underscore: 'aura/lib/underscore'
+    dom: 'aura/lib/dom'
+    base: 'aura/base/jquery'
+    aura_core: 'aura/mediator'
+    aura_perms: 'aura/permissions'
+    aura_sandbox: 'aura/facade'
+    core: 'extensions/backbone/mediator'
+    sandbox: 'extensions/backbone/facade'
+    text: 'extensions/backbone/lib/text'
+    backbone: 'extensions/backbone/lib/backbone'
+    localstorage: 'extensions/backbone/lib/localstorage'
+    fullcalendar: 'extensions/backbone/lib/fullcalendar.min'
+    jquery_ui: 'extensions/backbone/lib/jquery-ui.min'
+    perms: 'permissions'
+    widgets: 'widgets'
